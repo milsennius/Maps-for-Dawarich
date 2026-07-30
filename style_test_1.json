@@ -914,92 +914,6 @@
       }
     },
     {
-      "id": "building",
-      "type": "fill",
-      "source": "versatiles-shortbread",
-      "source-layer": "buildings",
-      "layout": {"visibility": "none"},
-      "paint": {
-        "fill-color": "rgb(236,229,225)",
-        "fill-opacity": {
-          "stops": [[0, 1], [14, 1]]
-        },
-        "fill-translate": [-2, -2]
-      }
-    },
-    {
-      "id": "building_parts",
-      "type": "fill-extrusion",
-      "source": "versatiles-shortbread",
-      "source-layer": "buildings",
-      "filter": [
-        "!=",
-        ["get", "hide_3d"],
-        true
-      ],
-      "layout": {
-        "visibility": "visible"
-      },
-      "paint": {
-        "fill-extrusion-height": [
-          "get",
-          "height"
-        ],
-        "fill-extrusion-base": [
-          "coalesce",
-          ["get", "min_height"],
-          0
-        ],
-        "fill-extrusion-color": {
-          "stops": [
-            [6, "hsl(35,8%,85%)"],
-            [10, "hsl(35,8%,85%)"]
-          ],
-          "type": "exponential"
-        },
-        "fill-extrusion-opacity": 0.8,
-        "fill-extrusion-vertical-gradient": false
-      }
-    },
-    {
-      "id": "building_heights",
-      "type": "fill-extrusion",
-      "source": "versatiles-shortbread",
-      "source-layer": "buildings",
-      "filter": ["all"],
-      "layout": {"visibility": "none"},
-      "paint": {
-        "fill-extrusion-height": [
-          "get",
-          "height"
-        ],
-        "fill-extrusion-base": [
-          "coalesce",
-          ["get", "min_height"],
-          0
-        ],
-        "fill-extrusion-color": "hsl(35,8%,85%)",
-        "fill-extrusion-opacity": 1
-      }
-    },
-    {
-      "id": "building:outline",
-      "type": "fill",
-      "source": "versatiles-shortbread",
-      "source-layer": "buildings",
-      "filter": [
-        "any",
-        ["==", "hide_3d", true]
-      ],
-      "layout": {"visibility": "none"},
-      "paint": {
-        "fill-color": "rgb(223,219,215)",
-        "fill-opacity": {
-          "stops": [[0, 1], [14, 1]]
-        }
-      }
-    },
-    {
       "id": "tunnel-street-pedestrian-zone",
       "type": "fill",
       "source": "versatiles-shortbread",
@@ -9289,6 +9203,92 @@
             [8, 1],
             [10, 2]
           ]
+        }
+      }
+    },
+    {
+      "id": "building_heights",
+      "type": "fill-extrusion",
+      "source": "versatiles-shortbread",
+      "source-layer": "buildings",
+      "filter": ["all"],
+      "layout": {"visibility": "none"},
+      "paint": {
+        "fill-extrusion-height": [
+          "get",
+          "height"
+        ],
+        "fill-extrusion-base": [
+          "coalesce",
+          ["get", "min_height"],
+          0
+        ],
+        "fill-extrusion-color": "hsl(35,8%,85%)",
+        "fill-extrusion-opacity": 1
+      }
+    },
+    {
+      "id": "building",
+      "type": "fill",
+      "source": "versatiles-shortbread",
+      "source-layer": "buildings",
+      "layout": {"visibility": "none"},
+      "paint": {
+        "fill-color": "rgb(236,229,225)",
+        "fill-opacity": {
+          "stops": [[0, 1], [14, 1]]
+        },
+        "fill-translate": [-2, -2]
+      }
+    },
+    {
+      "id": "building_parts",
+      "type": "fill-extrusion",
+      "source": "versatiles-shortbread",
+      "source-layer": "buildings",
+      "filter": [
+        "!=",
+        ["get", "hide_3d"],
+        true
+      ],
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-extrusion-height": [
+          "get",
+          "height"
+        ],
+        "fill-extrusion-base": [
+          "coalesce",
+          ["get", "min_height"],
+          0
+        ],
+        "fill-extrusion-color": {
+          "stops": [
+            [6, "hsl(35,8%,85%)"],
+            [10, "hsl(35,8%,85%)"]
+          ],
+          "type": "exponential"
+        },
+        "fill-extrusion-opacity": 0.8,
+        "fill-extrusion-vertical-gradient": false
+      }
+    },
+    {
+      "id": "building:outline",
+      "type": "fill",
+      "source": "versatiles-shortbread",
+      "source-layer": "buildings",
+      "filter": [
+        "any",
+        ["==", "hide_3d", true]
+      ],
+      "layout": {"visibility": "none"},
+      "paint": {
+        "fill-color": "rgb(223,219,215)",
+        "fill-opacity": {
+          "stops": [[0, 1], [14, 1]]
         }
       }
     },
