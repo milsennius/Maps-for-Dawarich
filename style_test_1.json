@@ -10541,9 +10541,7 @@
           0.1
         ]
       },
-      "layout": {
-        "visibility": "visible"
-      },
+      "layout": {"visibility": "none"},
       "maxzoom": 24
     }
   ],
