@@ -22,20 +22,6 @@
       "minzoom": 0,
       "maxzoom": 14
     },
-    "#ne2_shaded": {
-      "type": "raster",
-      "tiles": [
-        "https://tiles.openfreemap.org/natural_earth/ne2sr/{z}/{x}/{y}.png"
-      ],
-      "minzoom": 0,
-      "maxzoom": 6,
-      "scheme": "xyz",
-      "tileSize": 512
-    },
-    "openmaptiles": {
-      "type": "vector",
-      "url": "https://tiles.openfreemap.org/planet"
-    },
     "ne2_shaded": {
       "type": "raster",
       "tiles": [
