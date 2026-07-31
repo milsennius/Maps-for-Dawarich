@@ -20733,7 +20733,8 @@
     {
       "id": "Hillshade",
       "type": "hillshade",
-      "source": "maptiler_terrain"
+      "source": "maptiler_terrain",
+      "layout": {"visibility": "none"}
     }
   ],
   "metadata": {
