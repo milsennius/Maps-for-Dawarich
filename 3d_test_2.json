@@ -2191,7 +2191,7 @@
       "source": "maptiler_planet_v4",
       "source-layer": "building",
       "minzoom": 12,
-      "maxzoom": 15,
+      "maxzoom": 16,
       "layout": {
         "visibility": "visible"
       },
