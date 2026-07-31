@@ -20729,6 +20729,11 @@
         ["geometry-type"],
         "Point"
       ]
+    },
+    {
+      "id": "Hillshade",
+      "type": "hillshade",
+      "source": "maptiler_terrain"
     }
   ],
   "metadata": {
