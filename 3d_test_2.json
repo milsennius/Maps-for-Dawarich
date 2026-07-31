@@ -21073,5 +21073,5 @@
     "source": "maptiler_terrain",
     "exaggeration": 2
   },
-  "projection": {"type": "globe"}
+  "projection": {"type": ""}
 }
