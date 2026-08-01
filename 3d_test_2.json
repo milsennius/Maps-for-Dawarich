@@ -21,6 +21,10 @@
     "maptiler_hand_drawn_hillshade": {
       "type": "raster",
       "url": "https://api.maptiler.com/tiles/hand-drawn-hillshade/tiles.json?key=nqQkOaEi5lCMz4e29VKP"
+    },
+    "contours": {
+      "type": "vector",
+      "url": "https://api.maptiler.com/tiles/contours-v2/tiles.json?key=nqQkOaEi5lCMz4e29VKP"
     }
   },
   "layers": [
@@ -14914,6 +14918,122 @@
       ]
     },
     {
+      "id": "Contour",
+      "type": "line",
+      "source": "contours",
+      "source-layer": "contour",
+      "minzoom": 9,
+      "layout": {
+        "line-cap": "square",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "hsl(45, 38%, 50%)",
+        "line-opacity": [
+          "step",
+          ["zoom"],
+          [
+            "match",
+            ["get", "nth_line"],
+            0,
+            0,
+            0.3
+          ],
+          15,
+          0.3
+        ],
+        "line-width": 0.8
+      },
+      "filter": [
+        "all",
+        ["!in", "nth_line", 5, 10],
+        ["!has", "glacier"]
+      ]
+    },
+    {
+      "id": "Contour index",
+      "type": "line",
+      "source": "contours",
+      "source-layer": "contour",
+      "minzoom": 9,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "hsla(45, 38%, 45%, 0.8)",
+        "line-opacity": [
+          "interpolate",
+          ["exponential", 1],
+          ["zoom"],
+          9,
+          0.3,
+          14,
+          0.4,
+          18,
+          0.5
+        ],
+        "line-width": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          10,
+          1,
+          14,
+          1.5
+        ]
+      },
+      "filter": [
+        "all",
+        ["in", "nth_line", 5, 10],
+        ["!has", "glacier"]
+      ]
+    },
+    {
+      "id": "Contour labels",
+      "type": "symbol",
+      "source": "contours",
+      "source-layer": "contour",
+      "minzoom": 12,
+      "layout": {
+        "symbol-avoid-edges": true,
+        "symbol-placement": "line",
+        "text-allow-overlap": false,
+        "text-field": "{height}",
+        "text-font": [
+          "Open Sans Medium Italic",
+          "Noto Sans Medium Italic"
+        ],
+        "text-ignore-placement": false,
+        "text-padding": 1,
+        "text-pitch-alignment": "viewport",
+        "text-rotation-alignment": "map",
+        "text-size": {
+          "base": 1,
+          "stops": [[12, 8], [20, 12]]
+        },
+        "visibility": "visible"
+      },
+      "paint": {
+        "icon-color": "hsl(45, 38%, 31%)",
+        "icon-halo-color": "hsla(9, 0%, 100%, 0.8)",
+        "icon-halo-width": 0.8,
+        "icon-opacity": 0.8,
+        "text-color": "hsl(45, 38%, 25%)",
+        "text-halo-blur": 1,
+        "text-halo-color": "hsla(9, 0%, 100%, 0.6)",
+        "text-halo-width": 0.8,
+        "text-opacity": 0.8
+      },
+      "metadata": {},
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        [">", "height", 0],
+        ["in", "nth_line", 5, 10],
+        ["!has", "glacier"]
+      ]
+    },
+    {
       "id": "Street furniture",
       "type": "symbol",
       "source": "maptiler_planet_v4",
@@ -21071,7 +21191,7 @@
   "id": "streets-v4",
   "terrain": {
     "source": "maptiler_terrain",
-    "exaggeration": 2
+    "exaggeration": 1.5
   },
   "projection": {"type": "mercator"},
   "light": {"anchor": "viewport"}
