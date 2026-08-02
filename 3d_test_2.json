@@ -25,6 +25,10 @@
     "contours": {
       "type": "vector",
       "url": "https://api.maptiler.com/tiles/contours-v2/tiles.json?key=nqQkOaEi5lCMz4e29VKP"
+    },
+    "maptiler_hillshading_2": {
+      "type": "raster-dem",
+      "url": "https://api.maptiler.com/tiles/terrain-rgb-v2/tiles.json?key=nqQkOaEi5lCMz4e29VKP"
     }
   },
   "layers": [
@@ -41,11 +45,8 @@
     {
       "id": "Hillshade",
       "type": "hillshade",
-      "source": "maptiler_terrain",
       "minzoom": 8,
-      "layout": {
-        "visibility": "visible"
-      },
+      "layout": {"visibility": "none"},
       "paint": {
         "hillshade-accent-color": "hsl(270, 31%, 52%)",
         "hillshade-exaggeration": [
@@ -63,7 +64,8 @@
         ],
         "hillshade-highlight-color": "hsl(51, 100%, 89%)",
         "hillshade-shadow-color": "hsl(32, 52%, 25%)"
-      }
+      },
+      "source": "maptiler_hillshading"
     },
     {
       "id": "Hand-drawn hillshade",
@@ -97,6 +99,33 @@
         "raster-resampling": "linear",
         "raster-saturation": 0
       }
+    },
+    {
+      "id": "Hillshade-copy",
+      "type": "hillshade",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "hillshade-accent-color": "hsl(270, 31%, 52%)",
+        "hillshade-exaggeration": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          7.9,
+          0,
+          8,
+          0.1,
+          12,
+          0.3,
+          22,
+          0.5
+        ],
+        "hillshade-highlight-color": "hsl(51, 100%, 89%)",
+        "hillshade-shadow-color": "hsl(32, 52%, 25%)"
+      },
+      "source": "maptiler_hillshading_2"
     },
     {
       "id": "Farmland",
