@@ -21193,6 +21193,6 @@
     "source": "maptiler_terrain",
     "exaggeration": 1.5
   },
-  "projection": {"type": "mercator"},
+  "projection": {"type": ""},
   "light": {"anchor": "viewport"}
 }
