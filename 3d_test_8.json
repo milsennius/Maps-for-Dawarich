@@ -377,7 +377,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "fill-color": "hsla(60, 100%, 90%, 0.45)"
+        "fill-color": "hsla(210, 100%, 90%, 0.45)"
       },
       "filter": [
         "==",
