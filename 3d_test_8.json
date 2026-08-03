@@ -21269,6 +21269,5 @@
   "pitch": 0,
   "center": [0, 0],
   "zoom": 1,
-  "id": "streets-v4",
-  "terrain": {"source": ""}
+  "id": "streets-v4"
 }
