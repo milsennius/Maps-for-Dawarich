@@ -27,7 +27,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "background-color": "hsl(54, 100%, 97%)"
+        "background-color": "hsl(30, 16%, 98%)"
       }
     },
     {
@@ -101,11 +101,11 @@
           ["linear"],
           ["zoom"],
           4,
-          "hsl(42, 33%, 90%)",
+          "hsl(24, 0%, 94%)",
           8,
-          "hsl(42, 33%, 93%)",
+          "hsl(24, 0%, 97%)",
           16,
-          "hsl(48, 81%, 94%)"
+          "hsl(30, 16%, 98%)"
         ]
       },
       "filter": [
