@@ -31,6 +31,45 @@
       }
     },
     {
+      "id": "Building 3D",
+      "type": "fill-extrusion",
+      "source": "maptiler_planet_v4",
+      "source-layer": "building",
+      "minzoom": 15,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-extrusion-base": {
+          "property": "height_min",
+          "type": "identity"
+        },
+        "fill-extrusion-color": "hsl(44,14%,79%)",
+        "fill-extrusion-height": {
+          "property": "height",
+          "type": "identity"
+        },
+        "fill-extrusion-opacity": 0.6
+      },
+      "filter": [
+        "all",
+        [
+          "==",
+          ["geometry-type"],
+          "Polygon"
+        ],
+        [
+          "any",
+          [
+            "==",
+            ["get", "underground"],
+            false
+          ],
+          ["!", ["has", "underground"]]
+        ]
+      ]
+    },
+    {
       "id": "Farmland",
       "type": "fill",
       "source": "maptiler_planet_v4",
@@ -20957,45 +20996,6 @@
         "==",
         ["geometry-type"],
         "Point"
-      ]
-    },
-    {
-      "id": "Building 3D",
-      "type": "fill-extrusion",
-      "source": "maptiler_planet_v4",
-      "source-layer": "building",
-      "minzoom": 15,
-      "layout": {
-        "visibility": "visible"
-      },
-      "paint": {
-        "fill-extrusion-base": {
-          "property": "height_min",
-          "type": "identity"
-        },
-        "fill-extrusion-color": "hsl(44,14%,79%)",
-        "fill-extrusion-height": {
-          "property": "height",
-          "type": "identity"
-        },
-        "fill-extrusion-opacity": 1
-      },
-      "filter": [
-        "all",
-        [
-          "==",
-          ["geometry-type"],
-          "Polygon"
-        ],
-        [
-          "any",
-          [
-            "==",
-            ["get", "underground"],
-            false
-          ],
-          ["!", ["has", "underground"]]
-        ]
       ]
     }
   ],
