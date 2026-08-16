@@ -953,7 +953,7 @@
         "line-cap": "butt",
         "line-join": "round",
         "line-round-limit": 0,
-        "visibility": "visible"
+        "visibility": "none"
       },
       "paint": {
         "line-color": "hsl(210,73%,78%)",
