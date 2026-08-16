@@ -10530,7 +10530,7 @@
           "property": "height",
           "type": "identity"
         },
-        "fill-extrusion-opacity": 0.6,
+        "fill-extrusion-opacity": 1,
         "fill-extrusion-translate-anchor": "map",
         "fill-extrusion-vertical-gradient": true
       },
@@ -21274,6 +21274,6 @@
   "id": "streets-v4",
   "light": {
     "color": "rgba(255, 0, 0, 1)",
-    "intensity": 0.5
+    "intensity": 1
   }
 }
