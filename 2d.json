@@ -1113,7 +1113,7 @@
       "minzoom": 12,
       "layout": {
         "line-cap": "round",
-        "visibility": "visible"
+        "visibility": "none"
       },
       "paint": {
         "line-color": "hsl(210, 73%, 78%)",
