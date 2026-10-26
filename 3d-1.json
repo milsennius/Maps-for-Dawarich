@@ -18199,8 +18199,8 @@
         "text-field": [
           "coalesce",
           ["get", "name:ru"],
-          ["get", "name:en"],
-          ["get", "name"]
+          ["get", "name"],
+          ["get", "name:ru"]
         ],
         "text-font": [
           "Roboto Regular",
@@ -18276,8 +18276,8 @@
         "text-field": [
           "coalesce",
           ["get", "name:ru"],
-          ["get", "name:en"],
-          ["get", "name"]
+          ["get", "name"],
+          ["get", "name:en"]
         ],
         "text-font": [
           "match",
@@ -19250,8 +19250,8 @@
         "text-field": [
           "coalesce",
           ["get", "name:ru"],
-          ["get", "name:en"],
-          ["get", "name"]
+          ["get", "name"],
+          ["get", "name:ru"]
         ],
         "text-font": [
           "Roboto Medium",
@@ -20405,6 +20405,7 @@
         "icon-keep-upright": true,
         "text-field": [
           "coalesce",
+          ["get", "name:ru"],
           ["get", "name:en"],
           ["get", "name"]
         ],
@@ -20619,6 +20620,7 @@
         "text-field": [
           "coalesce",
           ["get", "name:ru"],
+          ["get", "name:en"],
           ["get", "name"]
         ],
         "text-font": [
