@@ -693,9 +693,7 @@
       "source": "contours",
       "source-layer": "contour",
       "minzoom": 9,
-      "layout": {
-        "visibility": "visible"
-      },
+      "layout": {"visibility": "none"},
       "paint": {
         "line-color": "hsla(45, 38%, 45%, 0.8)",
         "line-opacity": [
@@ -731,9 +729,7 @@
       "source": "contours",
       "source-layer": "contour",
       "minzoom": 9,
-      "layout": {
-        "visibility": "visible"
-      },
+      "layout": {"visibility": "none"},
       "paint": {
         "line-color": "hsla(209, 85%, 73%, 0.8)",
         "line-opacity": [
@@ -768,7 +764,7 @@
       "minzoom": 9,
       "layout": {
         "line-cap": "square",
-        "visibility": "visible"
+        "visibility": "none"
       },
       "paint": {
         "line-color": "hsl(45, 38%, 50%)",
@@ -801,7 +797,7 @@
       "minzoom": 9,
       "layout": {
         "line-cap": "square",
-        "visibility": "visible"
+        "visibility": "none"
       },
       "paint": {
         "line-color": "hsl(209, 85%, 80%)",
@@ -849,7 +845,7 @@
           "base": 1,
           "stops": [[12, 8], [20, 12]]
         },
-        "visibility": "visible"
+        "visibility": "none"
       },
       "paint": {
         "icon-color": "hsl(45, 38%, 31%)",
@@ -2391,7 +2387,7 @@
       "source": "maptiler_planet_v4",
       "source-layer": "building",
       "minzoom": 12,
-      "maxzoom": 15,
+      "maxzoom": 16,
       "layout": {
         "visibility": "visible"
       },
@@ -11048,7 +11044,7 @@
         "text-allow-overlap": false,
         "text-field": [
           "coalesce",
-          ["get", "name:en"],
+          ["get", "name:ru"],
           ["get", "name"]
         ],
         "text-font": [
@@ -11334,7 +11330,7 @@
       ]
     },
     {
-      "id": "River labels",
+      "id": "River labels-copy",
       "type": "symbol",
       "source": "maptiler_planet_v4",
       "source-layer": "water_label",
@@ -11348,7 +11344,7 @@
         "text-anchor": "center",
         "text-field": [
           "coalesce",
-          ["get", "name:en"],
+          ["get", "name:r"],
           ["get", "name"]
         ],
         "text-font": [
@@ -11401,6 +11397,73 @@
       ]
     },
     {
+      "id": "River labels",
+      "type": "symbol",
+      "source": "maptiler_planet_v4",
+      "source-layer": "water_label",
+      "minzoom": 13,
+      "layout": {
+        "symbol-avoid-edges": false,
+        "symbol-placement": "line",
+        "symbol-spacing": 500,
+        "symbol-z-order": "viewport-y",
+        "text-allow-overlap": true,
+        "text-anchor": "center",
+        "text-field": [
+          "coalesce",
+          ["get", "name:en"],
+          ["get", "name"]
+        ],
+        "text-font": [
+          "Roboto Italic",
+          "Noto Sans Italic"
+        ],
+        "text-letter-spacing": 0.2,
+        "text-line-height": 1,
+        "text-max-angle": 45,
+        "text-max-width": 10,
+        "text-overlap": "never",
+        "text-padding": 0,
+        "text-pitch-alignment": "viewport",
+        "text-rotation-alignment": "map",
+        "text-size": [
+          "interpolate",
+          ["exponential", 1],
+          ["zoom"],
+          12,
+          10,
+          16,
+          14,
+          22,
+          20
+        ],
+        "visibility": "none"
+      },
+      "paint": {
+        "icon-halo-color": "rgba(255, 255, 255, 1)",
+        "icon-halo-width": 1,
+        "text-color": "hsl(205, 84%, 40%)",
+        "text-halo-blur": 1.2,
+        "text-halo-color": "hsla(206, 100%, 92%, 0.5)",
+        "text-halo-width": 1.6
+      },
+      "filter": [
+        "all",
+        [
+          "==",
+          ["geometry-type"],
+          "LineString"
+        ],
+        [
+          "match",
+          ["get", "class"],
+          ["canal", "river"],
+          true,
+          false
+        ]
+      ]
+    },
+    {
       "id": "Ocean labels",
       "type": "symbol",
       "source": "maptiler_planet_v4",
@@ -11410,7 +11473,7 @@
       "layout": {
         "symbol-z-order": "viewport-y",
         "text-anchor": "center",
-        "text-field": "{name}",
+        "text-field": "{name:ru}",
         "text-font": [
           "Roboto Italic",
           "Noto Sans Italic"
@@ -16786,7 +16849,12 @@
           ["get", "rank"]
         ],
         "text-anchor": "top",
-        "text-field": "{name}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:ru"],
+          ["get", "name:en"],
+          ["get", "name"]
+        ],
         "text-font": [
           "Roboto Regular",
           "Noto Sans Regular"
@@ -18128,7 +18196,12 @@
         ],
         "text-allow-overlap": false,
         "text-anchor": "center",
-        "text-field": "{name}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:ru"],
+          ["get", "name:en"],
+          ["get", "name"]
+        ],
         "text-font": [
           "Roboto Regular",
           "Noto Sans Regular"
@@ -18200,7 +18273,12 @@
           ["get", "rank"]
         ],
         "text-anchor": "center",
-        "text-field": "{name}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:ru"],
+          ["get", "name:en"],
+          ["get", "name"]
+        ],
         "text-font": [
           "match",
           ["get", "class"],
@@ -18688,7 +18766,12 @@
           1.4
         ],
         "text-anchor": "top",
-        "text-field": "{name}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:ru"],
+          ["get", "name:en"],
+          ["get", "name"]
+        ],
         "text-font": [
           "Roboto Regular",
           "Noto Sans Regular"
@@ -19166,8 +19249,9 @@
         "text-anchor": "top",
         "text-field": [
           "coalesce",
-          ["get", "name"],
-          ""
+          ["get", "name:ru"],
+          ["get", "name:en"],
+          ["get", "name"]
         ],
         "text-font": [
           "Roboto Medium",
@@ -19341,7 +19425,12 @@
           ["get", "rank"]
         ],
         "text-anchor": "center",
-        "text-field": "{name}",
+        "text-field": [
+          "coalesce",
+          ["get", "name:ru"],
+          ["get", "name:en"],
+          ["get", "name"]
+        ],
         "text-font": [
           "Roboto Regular",
           "Noto Sans Regular"
@@ -19578,7 +19667,7 @@
         ],
         "text-field": [
           "coalesce",
-          ["get", "name"],
+          ["get", "name:ru"],
           ["get", "name:en"]
         ],
         "text-font": [
@@ -19681,6 +19770,7 @@
         "text-anchor": "center",
         "text-field": [
           "coalesce",
+          ["get", "name:ru"],
           ["get", "name:en"],
           ["get", "name"]
         ],
@@ -19872,6 +19962,7 @@
         "text-anchor": "bottom",
         "text-field": [
           "coalesce",
+          ["get", "name:ru"],
           ["get", "name:en"],
           ["get", "name"]
         ],
@@ -19995,7 +20086,7 @@
           4,
           [
             "coalesce",
-            ["get", "name"],
+            ["get", "name:ru"],
             ["get", "name:en"]
           ]
         ],
@@ -20198,6 +20289,7 @@
           12,
           [
             "coalesce",
+            ["get", "name:ru"],
             ["get", "name"],
             ["get", "iata"],
             ["get", "icao"],
@@ -20397,6 +20489,7 @@
         "symbol-spacing": 250,
         "text-field": [
           "coalesce",
+          ["get", "name:ru"],
           ["get", "name:en"],
           ["get", "name"]
         ],
@@ -20525,7 +20618,7 @@
         "text-anchor": "bottom",
         "text-field": [
           "coalesce",
-          ["get", "name:en"],
+          ["get", "name:ru"],
           ["get", "name"]
         ],
         "text-font": [
@@ -20654,7 +20747,7 @@
         "text-anchor": "bottom",
         "text-field": [
           "coalesce",
-          ["get", "name:en"],
+          ["get", "name:ru"],
           ["get", "name"]
         ],
         "text-font": [
@@ -20818,6 +20911,7 @@
         "text-allow-overlap": false,
         "text-field": [
           "coalesce",
+          ["get", "name:ru"],
           ["get", "name:en"],
           ["get", "name"]
         ],
@@ -20923,7 +21017,7 @@
         "text-anchor": "center",
         "text-field": [
           "coalesce",
-          ["get", "name:en"],
+          ["get", "name:ru"],
           ["get", "name"]
         ],
         "text-font": [
@@ -20976,7 +21070,7 @@
       "source-layer": "continent_label",
       "maxzoom": 2,
       "layout": {
-        "text-field": "{name:en}",
+        "text-field": "{name:ru}",
         "text-font": [
           "Roboto Bold",
           "Noto Sans Bold"
